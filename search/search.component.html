@@ -1,6 +1,5 @@
 <label class="input input-bordered flex items-center gap-2">
   <form class="grow" [formGroup]="applyForm">
-    <!-- <label for="species">Species</label> -->
     <input
       id="species"
       type="text"
@@ -26,6 +25,6 @@
 
 @if(isSelected){
 <div class="place-self-center place-">
-  <selected-animal />
+  <selected-animal [animal]="results[0]" />
 </div>
 }

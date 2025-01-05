@@ -1,4 +1,4 @@
-<div class="card bg-base-100 m-20 w-4/5 h-4/5 shadow-xl">
+<div class="card bg-base-100 m-20 w-4/5 h-2/5 shadow-xl">
   <figure>
     <img
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -7,9 +7,11 @@
   </figure>
   <div class="card-body">
     <h2 class="card-title">{{ animal.species }}</h2>
-    <p>{{ animal.species }}</p>
+    <p>{{ animal.description }}</p>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+      <a href="{{ animal.wiki }}" target="_blank" class="btn btn-primary"
+        >Read More</a
+      >
     </div>
   </div>
 </div>

@@ -4,6 +4,8 @@ import { Observable } from "rxjs";
 
 export interface Animal {
   species: string;
+  description: string;
+  wiki: string;
 }
 
 @Injectable({

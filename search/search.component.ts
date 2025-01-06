@@ -19,7 +19,7 @@ export class SearchComponent {
   });
 
   query: string = "abb";
-  results: any[] = [];
+  result!: Animal[];
 
   url = "http://localhost:3000/animals";
 
@@ -28,10 +28,15 @@ export class SearchComponent {
   constructor() {}
 
   async go() {
-    this.searchService.getAllAnimals().then((animals: Animal[]) => {
-      this.results = animals;
-    });
-    console.log(this.results);
-    this.isSelected = true;
+    await this.searchService
+      .getAnimalBySpecies("" + this.applyForm.get("species")?.value)
+      .then((animal: Animal[] | undefined) => {
+        if (animal) this.result = animal;
+        this.isSelected = true;
+      });
+    console.log(this.result);
+    if (this.result) console.log(this.result[0].description);
+
+    this.applyForm.get("species")?.value;
   }
 }

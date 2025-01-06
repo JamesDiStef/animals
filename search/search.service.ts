@@ -21,8 +21,8 @@ export class SearchService {
     return (await data.json()) ?? [];
   }
 
-  async getAnimalBySpecies(species: string): Promise<Animal | undefined> {
-    let data = await fetch("${this.apiUrl}/${species}");
+  async getAnimalBySpecies(species: string): Promise<Animal[] | undefined> {
+    let data = await fetch(this.apiUrl + "/" + species);
     return (await data.json()) ?? {};
   }
 }

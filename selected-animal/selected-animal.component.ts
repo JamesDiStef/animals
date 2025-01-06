@@ -9,11 +9,11 @@ import { Animal } from "../search/search.service";
   styleUrl: "./selected-animal.component.css",
 })
 export class SelectedAnimalComponent {
-  @Input() animal!: Animal;
+  @Input() animal!: Animal | undefined;
 
   constructor() {}
 
   ngOnInit() {
-    console.log(this.animal);
+    if (this.animal) console.log(this.animal.description);
   }
 }
